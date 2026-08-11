@@ -1,0 +1,338 @@
+.header-inah {
+  /* 1. Fondo negro para toda la barra */
+  background-color: #000000; 
+  /* Puedes cambiar el color del borde inferior a #ffffff si quieres que sea completamente blanco, 
+     o dejarlo en el institucional #621132 (guinda) */
+  border-bottom: 3px solid #621132; 
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .brand-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .header-logo {
+      height: 50px;
+      width: auto;
+    }
+
+    .brand-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      /* 2. Título en color blanco */
+      color: #ffffff; 
+    }
+  }
+
+  .nav-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    a {
+      /* 3. Enlaces en color blanco */
+      color: #ffffff; 
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        /* Gris claro para el efecto hover */
+        color: #cccccc; 
+      }
+    }
+
+    .user-menu-placeholder {
+      /* 4. Botón de perfil invertido: fondo negro, borde y texto blanco */
+      border: 1px solid #ffffff; 
+      padding: 5px 15px;
+      border-radius: 20px;
+      background-color: transparent; 
+      color: #ffffff; 
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        /* Al pasar el ratón se ilumina ligeramente */
+        background-color: rgba(255, 255, 255, 0.1); 
+      }
+    }
+
+    /* Estilos específicos para el Dropdown de Paragon */
+    .user-dropdown {
+      .dropdown-toggle.user-menu-placeholder {
+        /* Forzamos a quitar los estilos por defecto del botón de Bootstrap */
+        box-shadow: none;
+
+        &::after {
+          /* Ajuste para la pequeña flecha hacia abajo del dropdown */
+          margin-left: 8px;
+          vertical-align: middle;
+        }
+
+        &:focus, &:active, &:hover {
+          background-color: rgba(255, 255, 255, 0.1) !important;
+          color: #ffffff !important;
+          border-color: #ffffff !important;
+        }
+      }
+
+      .dropdown-menu {
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 0.5rem 0;
+
+        .dropdown-item {
+          color: #333333;
+          padding: 0.5rem 1.5rem;
+
+          &:hover {
+            background-color: #f8f9fa;
+            /* Guinda institucional en el hover */
+            color: #621132;
+          }
+        }
+      }
+    }
+
+    /* Estilos para la bandeja de notificaciones */
+    .notification-dropdown {
+      .dropdown-toggle::after {
+        display: none !important; /* Fuerza a ocultar la flecha de Bootstrap */
+      }
+
+      .dropdown-toggle {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+
+        &:focus, &:active, &:hover {
+          background-color: transparent !important;
+          color: #cccccc !important;
+        }
+      }
+
+      .dropdown-menu.notification-tray {
+        width: 380px; /* Ancho completo como la original */
+        padding: 0;
+        background-color: #ffffff;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        margin-top: 15px;
+        right: 0; /* Asegura que no se salga de la pantalla por la derecha */
+        left: auto;
+
+        .notification-tray-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px 20px 10px;
+          color: #00265a; /* Azul institucional original */
+          font-size: 1.1rem;
+        }
+
+        .notification-tray-tabs {
+          display: flex;
+          gap: 20px;
+          padding: 0 20px;
+          border-bottom: 1px solid #d9d9d9;
+
+          span {
+            padding-bottom: 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: #00265a;
+            font-weight: 500;
+
+            &.active {
+              border-bottom: 2px solid #00265a;
+            }
+          }
+        }
+
+        .notification-tray-body {
+          padding: 60px 20px;
+          text-align: center;
+          color: #00265a;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .empty-bell-icon {
+            background-color: #e9ecef; /* Círculo gris */
+            border-radius: 50%;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg { color: #00265a; }
+          }
+
+          p {
+            margin: 0 0 10px;
+            font-size: 1.3rem;
+            font-weight: 500;
+          }
+
+          small {
+            font-size: 0.85rem;
+            color: #6c757d;
+          }
+        }
+      }
+    }
+
+    /* Estilos para el botón de notificaciones */
+    .icon-button.notification-btn {
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s, transform 0.2s;
+      margin-left: 10px;
+
+      &:hover {
+        color: #cccccc;
+        transform: scale(1.1);
+      }
+    }
+
+    /* Estilos para el contenedor del Toggle Claro/Oscuro */
+    .theme-toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+      margin: 0 15px;
+
+      /* Estructura del Switch (Pastilla) */
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 48px;
+        height: 26px;
+        margin-bottom: 0;
+      }
+
+      /* Ocultar el checkbox nativo de HTML */
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      /* El fondo deslizable */
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        border: 2px solid #ffffff;
+        transition: 0.4s;
+      }
+
+      /* El círculo interior */
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 2px;
+        bottom: 2px;
+        background-color: #ffffff;
+        transition: 0.4s;
+      }
+
+      /* Cuando está encendido */
+      input:checked + .slider {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(22px);
+      }
+
+      /* Bordes redondeados */
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+/* =========================================
+   2. Estilos Globales para el Modo Oscuro
+   ========================================= */
+body.dark-theme {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+
+  .pgn__page-wrap,
+  main {
+    background-color: #1a1a1a !important;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span {
+    color: #e0e0e0 !important;
+  }
+
+  .card {
+    background-color: #2a2a2a !important;
+    border-color: #444444 !important;
+    color: #e0e0e0 !important;
+  }
+
+  /* Inversión dinámica de la bandeja de notificaciones */
+  .notification-tray {
+    background-color: #1e1e1e !important;
+    border-color: #333333 !important;
+    
+    .notification-tray-header,
+    .notification-tray-tabs span,
+    .notification-tray-body p {
+      color: #ffffff !important;
+    }
+
+    .notification-tray-tabs {
+      border-bottom-color: #333333 !important;
+      
+      span.active {
+        border-bottom-color: #ffffff !important;
+      }
+    }
+
+    .notification-tray-body .empty-bell-icon {
+      background-color: #333333 !important;
+      svg { color: #ffffff !important; }
+    }
+
+    .notification-tray-body small {
+      color: #aaaaaa !important;
+    }
+  }
+}

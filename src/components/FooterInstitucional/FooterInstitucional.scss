@@ -1,0 +1,95 @@
+.footer-inah {
+  background-color: #a4a4a4; /* Tono de gris institucional, ajustable según manual de identidad */
+  color: #ffffff;
+  padding: 4rem 0 2rem;
+  font-family: 'Open Sans', sans-serif; // O la fuente institucional definida
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
+  }
+
+  .footer-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        
+        .icon-chevron {
+          font-size: 1.2rem;
+          line-height: 1;
+        }
+      }
+    }
+
+    /* Variación para flechas a la izquierda (Columna 1) */
+    &.links-left {
+      a .icon-chevron {
+        margin-right: 8px;
+      }
+    }
+
+    /* Variación para flechas a la derecha (Columna 2) */
+    &.links-right {
+      a {
+        justify-content: flex-start;
+        .icon-chevron {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  .footer-brand {
+    h6 {
+      font-weight: 700;
+      margin-top: 1.5rem;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+    .logo-main {
+      max-width: 140px;
+      height: auto;
+    }
+  }
+
+  .footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 3rem 0 2rem;
+  }
+
+  .footer-bottom {
+    .logos-gov {
+      max-height: 70px;
+      width: auto;
+    }
+  }
+}
